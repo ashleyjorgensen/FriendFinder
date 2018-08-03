@@ -33,5 +33,5 @@
           ]
     }];
 
-    module.export = friends;
+
   
