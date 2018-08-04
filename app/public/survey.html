@@ -296,54 +296,60 @@
                         <button type="button" class="btn btn-primary">Find my new BFF!</button>
                     </div>
 
-<script>
-    // $.get()
-    //for loop that runs through the questions 
-    //get the value of the image and scores
-    //push them into an object
-    //then push the obect into the api
-    
-    $(document).ready(function(){
+                    <script>
+                        // $.get()
+                        //for loop that runs through the questions 
+                        //get the value of the image and scores
+                        //push them into an object
+                        //then push the obect into the api
 
-        $(":button").click(function(){
-            var radioes = $("input[type=radio]:checked");
-            var answers = [];
-            $(radioes).each(function(index, element) {
+                        $(document).ready(function () {
 
-                var answer = parseInt($(element).val());
-                
-                answers.push(answer);
-            });
-            
-            console.log(answers);
-            var nextFriend = {
-                "name": $("#nameInput").val(),
-                "photo": ".jpg",
-                "scores": answers
-            };
-            
-            var smallestDifference = 9999;
-            var smallestDiffIndex = -1;
-            //for(var i=0; // iterate through all friends in friends.js
-            //pull the friend into a separate variable (temp)
-            // iterate through all answers of both friends
-            // find difference between first friends answer0 and second friends answer0
-            // if the difference is negative, multiply by -1 to make positive
-            // add to a total variable
-            // repeat process
-            // check the total difference
-            // if the total difference is less than previously found total difference
-            //   set smallestDifference to that difference & tsmallDifIndex to that index
+                            $(":button").click(function () {
+                                var radios = $("input[type=radio]:checked");
+                                var answers = [];
+                                $(radios).each(function (index, element) {
 
-            // after the for loop is over, whatever is the smallest index is the best match
-        });
+                                    var answer = parseInt($(element).val());
 
-    });
+                                    answers.push(answer);
+                                });
+
+                                console.log(answers);
+                                var nextFriend = {
+                                    "name": $("#nameInput").val(),
+                                    "photo": ".jpg",
+                                    "scores": answers
+                                };
+
+                                var smallestDifference = 9999;
+                                var smallestDiffIndex = -1;
+
+                                for (let i = 0; i < nextFriend.length; i++)
+                                    let count = 0;
+                                let compare = nextFriend[i].scores;
+                                for (let i = 0; i < compare.length; i++) {
+                                    count += Math.abs(compare[i] - newScore[i]);
+                                }
+                                //for(var i=0; // iterate through all friends in friends.js
+                                //pull the friend into a separate variable (temp)
+                                // iterate through all answers of both friends
+                                // find difference between first friends answer0 and second friends answer0
+                                // if the difference is negative, multiply by -1 to make positive
+                                // add to a total variable
+                                // repeat process
+                                // check the total difference
+                                // if the total difference is less than previously found total difference
+                                //   set smallestDifference to that difference & tsmallDifIndex to that index
+
+                                // after the for loop is over, whatever is the smallest index is the best match
+                            });
+
+                        });
 
 
-</script>
+                    </script>
 
 </body>
 
 </html>
-
