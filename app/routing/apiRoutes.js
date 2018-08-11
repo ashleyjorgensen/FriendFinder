@@ -16,10 +16,33 @@ module.exports = function (app) {
     });
 
     app.post("/api/newfriend", function (req, res) {
-        console.log(req.body);
+        var userData = req.body;
+
+        var bestFriend ={
+            name:"",
+            friendpoints:1000
+        }
+
+        var  totalDifference
+
+        //for loop over friends
+
+            //currentFriend variable
+
+            //for loop over currentFriend.scores
+                // where the math happens
+                // use Math.abs to calculate the difference between each index of  userData scores and current Friend sccores and add diff to totalDifference
+
+             //
+             
+             if totalDifference < bestFriend.friendpoints
+
+             bestFriend.name = currentFriend.name
+
+
         friends.push(req.body);
-        res.send(friends[0]);
-        console.log(friends);
+        res.json(bestFriend);
+        // console.log(friends);
     });
 
     //for every ajax call you do on client side you need a correncesponding express route
